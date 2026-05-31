@@ -1,0 +1,85 @@
+# ============================================================
+# LungSight AI — Backend Dependencies
+# ============================================================
+
+# --- Core API Framework ---
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+gunicorn==23.0.0
+python-multipart==0.0.12
+httpx==0.28.1
+
+# --- Database ---
+sqlalchemy==2.0.36
+alembic==1.14.0
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+aiofiles==24.1.0
+
+# --- Authentication & Security ---
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.1
+
+# --- ML Core ---
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+tensorflow==2.18.0
+keras==3.7.0
+
+# --- Medical Imaging ---
+pydicom==3.0.1
+Pillow==10.4.0
+opencv-python-headless==4.10.0.84
+scikit-image==0.24.0
+imageio==2.36.1
+SimpleITK==2.4.0
+
+# --- ML & Data Science ---
+numpy==2.0.2
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+matplotlib==3.9.3
+seaborn==0.13.2
+plotly==5.24.1
+
+# --- Deep Learning Extras ---
+timm==0.9.7
+segmentation-models-pytorch==0.3.4
+albumentations==1.4.21
+efficientnet-pytorch==0.7.1
+
+# --- Explainable AI ---
+grad-cam==1.5.4
+captum==0.7.0
+
+# --- Report Generation ---
+reportlab==4.2.5
+fpdf2==2.8.1
+jinja2==3.1.4
+weasyprint==63.0
+
+# --- Caching & Task Queue ---
+redis==5.2.1
+celery==5.4.0
+
+# --- Monitoring ---
+prometheus-fastapi-instrumentator==7.0.0
+
+# --- Utilities ---
+pydantic==2.10.3
+pydantic-settings==2.6.1
+python-dateutil==2.9.0
+tqdm==4.67.1
+loguru==0.7.3
+rich==13.9.4
+typer==0.15.1
+
+# --- Testing ---
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.1
+factory-boy==3.3.1

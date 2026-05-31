@@ -1,0 +1,75 @@
+# LungSight AI — Training Configuration
+# ============================================================
+
+data:
+  dataset: "chest_xray_pneumonia"
+  data_dir: "./data/chest_xray"
+  image_size: 224
+  num_classes: 2
+  classes: ["NORMAL", "PNEUMONIA"]
+  train_split: 0.70
+  val_split:   0.15
+  test_split:  0.15
+  augmentation: true
+
+models:
+  DenseNet121:
+    pretrained: true
+    freeze_backbone: false
+    dropout: 0.5
+    lr: 0.0001
+    weight_decay: 0.0001
+    epochs: 30
+    batch_size: 32
+    patience: 7
+
+  EfficientNetB3:
+    pretrained: true
+    freeze_backbone: false
+    dropout: 0.5
+    lr: 0.0001
+    weight_decay: 0.0001
+    epochs: 30
+    batch_size: 32
+    patience: 7
+
+  ResNet50:
+    pretrained: true
+    freeze_backbone: false
+    dropout: 0.5
+    lr: 0.0001
+    weight_decay: 0.0001
+    epochs: 30
+    batch_size: 32
+    patience: 7
+
+  VGG16:
+    pretrained: true
+    freeze_backbone: false
+    dropout: 0.5
+    lr: 0.00005
+    weight_decay: 0.0001
+    epochs: 25
+    batch_size: 16
+    patience: 5
+
+training:
+  optimizer: "AdamW"
+  scheduler: "CosineAnnealingLR"
+  mixed_precision: true
+  grad_clip: 1.0
+  label_smoothing: 0.1
+  class_weighting: true
+  weighted_sampler: true
+
+ensemble:
+  models: ["DenseNet121", "EfficientNetB3", "ResNet50"]
+  weights:
+    DenseNet121:    0.40
+    EfficientNetB3: 0.35
+    ResNet50:       0.25
+
+output:
+  weights_dir: "./backend/models/weights"
+  tb_logs_dir: "./tb_logs"
+  results_dir: "./research/results"
