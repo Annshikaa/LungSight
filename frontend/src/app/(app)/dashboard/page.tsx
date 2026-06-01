@@ -113,7 +113,7 @@ export default function DashboardPage() {
                   </div>
                   <h3 className="text-foreground font-semibold">No reports available</h3>
                   <p className="text-muted-foreground text-sm max-w-[250px]">
-                    Your doctor hasn't processed any scans for you yet.
+                    Your doctor hasn&apos;t processed any scans for you yet.
                   </p>
                 </div>
               ) : (
@@ -171,7 +171,7 @@ export default function DashboardPage() {
               transition={{ delay: 0.2 }}
               className="rounded-2xl border border-border bg-card p-6 shadow-sm flex flex-col h-full"
             >
-              <h2 className="text-lg font-bold text-foreground mb-1">Doctor's Notes & Precautions</h2>
+              <h2 className="text-lg font-bold text-foreground mb-1">Doctor&apos;s Notes & Precautions</h2>
               <p className="text-sm text-muted-foreground mb-6">Based on your latest scan results</p>
               
               {latestScan ? (
@@ -336,7 +336,7 @@ export default function DashboardPage() {
                   </div>
                   <h3 className="text-foreground font-semibold">No recent scans</h3>
                   <p className="text-muted-foreground text-sm max-w-[250px]">
-                    Your diagnostic history is empty. Analyze a patient's X-Ray to get started.
+                    Your diagnostic history is empty. Analyze a patient&apos;s X-Ray to get started.
                   </p>
                   <Link href="/predict" className="mt-4 px-6 py-2.5 bg-foreground text-background text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity">
                     Analyze First Scan

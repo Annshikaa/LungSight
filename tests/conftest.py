@@ -1,5 +1,4 @@
 import os
-import pytest
 
 # Set test environment variables before any app imports
 os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://test:test@localhost:5432/lungsight_test")

@@ -5,7 +5,6 @@ Generates heatmaps, overlays, bounding boxes, and activation maps.
 """
 from __future__ import annotations
 
-import io
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
@@ -13,7 +12,6 @@ import cv2
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 
 # ──────────────────────────────────────────────────────────────────────────────

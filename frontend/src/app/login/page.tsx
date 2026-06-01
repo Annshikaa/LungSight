@@ -128,7 +128,7 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-8 text-center text-xs text-muted-foreground">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/" className="text-medical-600 dark:text-medical-400 font-semibold hover:underline">
             Contact Administration
           </Link>

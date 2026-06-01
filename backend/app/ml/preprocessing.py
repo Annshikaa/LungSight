@@ -68,9 +68,9 @@ def _resize(img: np.ndarray, size: Tuple[int, int] = TARGET_SIZE) -> np.ndarray:
 def apply_clahe(img: np.ndarray, clip_limit: float = 3.0, tile_size: int = 8) -> np.ndarray:
     """Contrast Limited Adaptive Histogram Equalization on L channel."""
     lab = cv2.cvtColor(img, cv2.COLOR_RGB2LAB)
-    l, a, b = cv2.split(lab)
+    l_channel, a, b = cv2.split(lab)
     clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=(tile_size, tile_size))
-    l_eq = clahe.apply(l)
+    l_eq = clahe.apply(l_channel)
     lab_eq = cv2.merge([l_eq, a, b])
     return cv2.cvtColor(lab_eq, cv2.COLOR_LAB2RGB)
 

@@ -5,10 +5,9 @@ compute dice/IoU metrics, and extract lung ROI.
 """
 from __future__ import annotations
 
-import io
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Optional, Tuple
+from typing import Optional, Tuple
 
 import cv2
 import numpy as np

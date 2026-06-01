@@ -16,7 +16,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
-from torchvision import transforms
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))

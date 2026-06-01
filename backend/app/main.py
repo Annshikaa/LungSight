@@ -4,7 +4,6 @@ Production-grade chest X-ray diagnostic AI backend.
 """
 from __future__ import annotations
 
-import os
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -13,7 +12,6 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.staticfiles import StaticFiles
 from loguru import logger
 
 from app.config import settings

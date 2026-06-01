@@ -3,7 +3,6 @@ LungSight AI — ML Unit Tests
 """
 import io
 import numpy as np
-import pytest
 from PIL import Image
 
 
@@ -80,7 +79,7 @@ def test_dice_iou():
 # ── Classification models ────────────────────────────────────────────────────────
 
 def test_model_registry():
-    import tempfile, os
+    import tempfile
     from app.ml.models import ClassificationModelRegistry
     with tempfile.TemporaryDirectory() as tmp:
         reg = ClassificationModelRegistry(weights_dir=tmp, device="cpu")
@@ -120,7 +119,8 @@ def test_severity_critical():
 # ── Uncertainty ────────────────────────────────────────────────────────────────
 
 def test_uncertainty_estimator():
-    import tempfile, torch
+    import tempfile
+    import torch
     from app.ml.models import ClassificationModelRegistry
     from app.ml.uncertainty import MCDropoutEstimator
     device = torch.device("cpu")

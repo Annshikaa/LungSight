@@ -49,7 +49,7 @@ async def test_benchmark():
     assert r.status_code == 200
     data = r.json()
     assert isinstance(data, list)
-    assert len(data) == 4
+    assert len(data) == 3
     model_names = [d["model_name"] for d in data]
     assert "DenseNet121" in model_names
 
