@@ -20,7 +20,7 @@ def sample_xray_bytes():
 
 @pytest.mark.asyncio
 async def test_health():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.get("/api/v1/health")
     assert r.status_code == 200
@@ -31,7 +31,7 @@ async def test_health():
 
 @pytest.mark.asyncio
 async def test_analytics():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.get("/api/v1/analytics")
     assert r.status_code == 200
@@ -43,7 +43,7 @@ async def test_analytics():
 
 @pytest.mark.asyncio
 async def test_benchmark():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.get("/api/v1/benchmark")
     assert r.status_code == 200
@@ -56,7 +56,7 @@ async def test_benchmark():
 
 @pytest.mark.asyncio
 async def test_leaderboard():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.get("/api/v1/benchmark/leaderboard")
     assert r.status_code == 200
@@ -69,7 +69,7 @@ async def test_leaderboard():
 
 @pytest.mark.asyncio
 async def test_models_list():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.get("/api/v1/models")
     assert r.status_code == 200
@@ -81,7 +81,7 @@ async def test_models_list():
 
 @pytest.mark.asyncio
 async def test_predict_invalid_file():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.post(
             "/api/v1/predict",
@@ -93,7 +93,7 @@ async def test_predict_invalid_file():
 
 @pytest.mark.asyncio
 async def test_predict_empty_file():
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         r = await client.post(
             "/api/v1/predict",
@@ -105,7 +105,7 @@ async def test_predict_empty_file():
 
 @pytest.mark.asyncio
 async def test_predict_valid_image(sample_xray_bytes):
-    from app.main import app
+    from backend.app.main import app
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test", timeout=60.0
     ) as client:
